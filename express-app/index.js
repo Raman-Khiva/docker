@@ -17,6 +17,27 @@ app.get("/health",(req,res)=>{
   })
 })
 
+app.get("/ping",(req,res)=>{
+  console.log("/PING")
+  res.status(200).send("pong")
+})
+
+app.get("/random",(req,res)=>{
+  res.status(200).json({
+    success : true,
+    message : "Random isn't random anymore",
+    data : {}
+  })
+})
+
+app.use((req,res)=>{
+  res.status(404).json({
+    success : false,
+    error : "NOT FOUND",
+    message : "Route not found",
+  })
+})
+
 
 app.listen(port,"0.0.0.0", () => {
   console.log(`Server running at port  : ${port}`);
