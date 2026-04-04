@@ -4,13 +4,13 @@ services:
   server:
     build:
       context: ./server
-    port:
-      - 5000:5000
+    ports:
+      - "5000:5000"
 
   client:
     build:
       context: ./client
-    port:
-      - 3000:3000
+    ports:
+      - "3000:3000"
     depends_on:
       - server
