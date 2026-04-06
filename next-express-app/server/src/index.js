@@ -20,9 +20,11 @@ app.get("/api/health", (req, res) => {
 
 app.get("/api/message", (req, res) => {
   console.log("Route called : /api/message");
-  res
-    .status(200)
-    .json({ success: true, message: "Hello from the server!", data: {} });
+  res.status(200).json({
+    success: true,
+    message: "Message updated : Hii from the server!",
+    data: {},
+  });
 });
 
 app.use((req, res) => {

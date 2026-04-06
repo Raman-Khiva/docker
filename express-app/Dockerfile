@@ -1,7 +1,7 @@
 
 
 
-FROM node:latest
+FROM node:24.14-alpine
 
 
 WORKDIR app
